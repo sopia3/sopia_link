@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>sopia-v3</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>전송하기</strong> By. [crown] bixby</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('5979d3aa3a008cd07a9c9a272ba406de');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '소피아',
+        description: '소피아 설명',
+        imageUrl:
+          'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
+        link: {
+          mobileWebUrl: 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
+          webUrl: 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
+        },
+      },
+      social: {
+        likeCount: 10, //99999가 최대입니다
+        commentCount: 11, //99999가 최대입니다
+        sharedCount: 12, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '노션 바로가기',
+          link: {
+            mobileWebUrl: 'https://www.notion.so/sopiav3/Sopia-v3-0-6-5-a3803cbf12a4438ea2f20c40fe96a109',
+            webUrl: 'https://www.notion.so/sopiav3/Sopia-v3-0-6-5-a3803cbf12a4438ea2f20c40fe96a109',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
