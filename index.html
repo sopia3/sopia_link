@@ -1,48 +1,66 @@
+< index.html >
+
 <html>
 <head>
-<title>sopia-v3</title>
-<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>카톡 공유</title>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<p><strong>전송하기</strong> By. [crown] bixby</p>
-<a id="kakao-link-btn" href="javascript:sendLink()">
-  <img
-    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-  />
-</a>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
 <script type="text/javascript">
- Kakao.init('5979d3aa3a008cd07a9c9a272ba406de');
-  function sendLink() {
+    function sendLinkCustom() {
+        Kakao.init("5979d3aa3a008cd07a9c9a272ba406de");
+        Kakao.Link.sendCustom({
+            templateId:541916
+        });
+    }
+</script>
+
+<script>
+try {
+  function sendLinkDefault() {
+    Kakao.init('5979d3aa3a008cd07a9c9a272ba406de')
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '소피아',
-        description: '소피아 설명',
+        title: '딸기 치즈 케익',
+        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
         imageUrl:
-          'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
+          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
         link: {
-          mobileWebUrl: 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
-          webUrl: 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fpng-vector%2F20220118%2Fourlarge%2Fpngtree-robot-cartoon-vector-material-design-png-image_4202824.png&type=a340',
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
         },
       },
       social: {
-        likeCount: 10, //99999가 최대입니다
-        commentCount: 11, //99999가 최대입니다
-        sharedCount: 12, //99999가 최대입니다
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
       },
       buttons: [
         {
-          title: '노션 바로가기',
+          title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'https://www.notion.so/sopiav3/Sopia-v3-0-6-5-a3803cbf12a4438ea2f20c40fe96a109',
-            webUrl: 'https://www.notion.so/sopiav3/Sopia-v3-0-6-5-a3803cbf12a4438ea2f20c40fe96a109',
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
           },
         },
       ],
     })
   }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 </script>
-<!-- www.blackcats4567.com -->
-<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
-  </body>
+   
+</body>
 </html>
